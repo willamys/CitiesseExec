@@ -17,4 +17,8 @@ public class teste {
 	public void Teste3() {
 		System.out.println("merge");
 	}
+	
+	public void Teste4() {
+		System.out.println("merge");
+	}
 }
