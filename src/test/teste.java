@@ -14,6 +14,13 @@ public class teste {
 		 * dsadsadsadasdsdsadsa*
 		 */
 	}
+	
+	public void teste4() {
+		/*
+		 * 
+		 * dsadsadsadasdsdsadsa*
+		 */
+	}
 	public void Teste3() {
 		System.out.println("merge");
 	}
