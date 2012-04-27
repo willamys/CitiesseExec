@@ -9,6 +9,5 @@ public class teste {
 	}
 	
 	public teste() {
-		//eu mechi aqui
 	}
 }
