@@ -14,4 +14,11 @@ public class teste {
 		 * dsadsadsadasdsdsadsa*
 		 */
 	}
+	
+	public void teste4() {
+		/*
+		 * 
+		 * dsadsadsadasdsdsadsa*
+		 */
+	}
 }
