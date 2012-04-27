@@ -70,6 +70,7 @@ public class GMSTestCaseDAOHibernate implements GMSDAO {
 		} catch (HibernateException e) {
 			throw new GMSDataAccessException(ApplicationStrings.GMSTESTCASE_ERROR_MESSAGE_LIST_ALL_TESTCASE);
 		} finally {
+			session.close();
 		}
 	}
 
