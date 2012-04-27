@@ -28,4 +28,8 @@ public class teste {
 	public void Teste4() {
 		System.out.println("merge");
 	}
+	
+	public void Teste5() {
+		System.out.println("merge");
+	}
 }
