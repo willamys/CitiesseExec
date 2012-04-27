@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Test Case Manager</title>
+	<link type="text/css" rel="stylesheet" href="/css/l.css" />
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<p:panel header="Test Case Manager">
+		<p:dataTable var="testCase" value="#{gmsTestCaseControl.listTestCase}">
+			<p:column>
+				<f:facet name="header">Test Case ID</f:facet>
+				<h:outputText value="#{testCase.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					Description
+				</f:facet>
+				<h:outputText value="#{testCase.descriptionSteps}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Test Case Name
+				</f:facet>
+				<h:outputText value="#{testCase.testCaseName}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					Update
+				</f:facet>
+				<h:form>
+					<h:commandButton
+						action="#{gmsTestCaseControl.prepareUpdateTestCase}"
+						value="Update" />
+				</h:form>
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					Delete
+				</f:facet>
+				<h:form>
+					<h:commandButton action="#{gmsTestCaseControl.delete}"
+						value="Delete" />
+				</h:form>
+			</p:column>
+		</p:dataTable>
+		<br />
+		<h:form>
+			<h:commandButton value="Insert Test Case"
+				action="#{gmsTestCaseControl.prepareInsertTestCase}" />
+		</h:form>
+	</p:panel>
+	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
+		<p class="copyright">
+			© 2012 <a href="http://www.cts.com.tr">CTS TEAM</a>
+		</p>
+		<p style="float: right">Running PrimeFaces-3.2 on Mojarra-2.1.4</p>
+	</div>
+</h:body>
+</h:html>

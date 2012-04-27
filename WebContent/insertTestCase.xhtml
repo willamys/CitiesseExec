@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Insert Test Case</title>
+	<link type="text/css" rel="stylesheet" href="/css/l.css" />
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<p:panel header="Insert Test Case" >
+	<h:form id="Form">
+            Test Case Id: <h:inputText id="Test_Case_Id" required="true"
+			value="#{gmsTestCaseControl.testCase.id}" />
+		<h:message for="Test_Case_Id" />
+		<br />
+            Test Case Name: <h:inputText
+			value="#{gmsTestCaseControl.testCase.testCaseName}" />
+		<br />
+            Description Steps Test Case: <h:inputText
+			value="#{gmsTestCaseControl.testCase.descriptionSteps}" />
+		<br />
+		<h:commandButton action="#{gmsTestCaseControl.insert}" value="Insert" />
+		<br />
+		<h:commandLink action="index" value="back" />
+	</h:form>
+	</p:panel>
+	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
+			<p class="copyright">©  2012 <a href="http://www.cts.com.tr">CTS TEAM</a></p>
+			<p style="float:right">Running PrimeFaces-3.2 on Mojarra-2.1.4</p>
+	</div>
+</h:body>
+</h:html>
