@@ -7,4 +7,8 @@ public class teste {
 		System.out.println("Teste100");
 		System.out.println("Teste3");
 	}
+	
+	public teste() {
+		//eu mechi aqui
+	}
 }
