@@ -25,7 +25,15 @@ public class teste {
 		System.out.println("merge");
 	}
 	
-	public void Teste6() {
+
+	public void Teste6() {}
+
+	public void Teste4() {
+		System.out.println("merge");
+	}
+	
+	public void Teste5() {
+
 		System.out.println("merge");
 	}
 }
