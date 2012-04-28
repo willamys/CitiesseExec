@@ -46,7 +46,7 @@ public class GMSTestCaseControl{
 		if(listById(this.testCase.getId()) == null){
 			System.out.println(this.testCase.getId());
 			dao.insert(this.testCase);
-			result = "managerTestCaseSetup";
+			result = "managerTestCase";
 		}else{
 			result = "insertTestCase";
 		}
