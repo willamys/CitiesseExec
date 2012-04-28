@@ -6,11 +6,14 @@ import javax.faces.model.DataModel;
 
 import util.ApplicationException;
 import gms.GMSTestCase;
+import gms.GMSTestCaseSetup;
 import gms.control.GMSTestCaseControl;
+import gms.control.GMSTestCaseSetupControl;
 import gms.data.GMSTestCaseDAOHibernate;
+import gms.data.GMSTestCaseSetupDAOHibernate;
 
 public class Main {
-
+/*
 	public static void main(String[] args) {
 			GMSTestCaseControl gms = new GMSTestCaseControl();
 			GMSTestCaseDAOHibernate dao = new  GMSTestCaseDAOHibernate();
@@ -34,4 +37,29 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
+	*/
+	public static void main(String[] args) {
+		GMSTestCaseSetupControl gms = new GMSTestCaseSetupControl();
+		GMSTestCaseSetupDAOHibernate dao = new  GMSTestCaseSetupDAOHibernate();
+	try {
+		GMSTestCaseSetup t =  new GMSTestCaseSetup();
+		t.setId(70);
+		t.setDescriptionSetup("dasdsadasdsa");
+		t.setNote("testcase 69");
+		dao.insert(t); 
+	
+		//t.setDescriotionSteps("mudei");
+		//dao.delete(t);
+		
+		///gms.insert();
+		DataModel<GMSTestCaseSetup> list = gms.getListTestCaseSetup();
+		GMSTestCaseSetup g = (GMSTestCaseSetup)list.getRowData();
+		
+		System.out.println(list.getRowCount());
+	} catch (ApplicationException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+
 }

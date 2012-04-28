@@ -6,31 +6,32 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Update Test Case</title>
+	<title>Update Test Case Setup</title>
 	<link type="text/css" rel="stylesheet" href="/css/l.css" />
 </h:head>
 <h:body>
 	<ui:include src="/menu.xhtml" />
-	<p:panel header="Update Test Case">
+	<p:panel header="Update Test Case Setup">
 		<h:form>
             Test Case Id:
-			<h:outputLabel value="#{gmsTestCaseControl.testCase.id}" />
+            <h:outputLabel value="#{gmsTestCaseSetupControl.testCaseSetup.id}" />
 			<br />
-			<h:inputHidden value="#{gmsTestCaseControl.testCase.id}" />
-            Test Case Name: <h:inputText
-				value="#{gmsTestCaseControl.testCase.testCaseName}" />
+			<h:inputHidden value="#{gmsTestCaseSetupControl.testCaseSetup.id}" />
+            Description Setup: <h:inputText
+				value="#{gmsTestCaseSetupControl.testCaseSetup.descriptionSetup}" />
 			<br />
-            Description Steps Test Case: <h:inputTextarea
-				value="#{gmsTestCaseControl.testCase.descriptionSteps}" />
+            Note: <h:inputTextarea
+				value="#{gmsTestCaseSetupControl.testCaseSetup.note}" />
 			<br />
-			<h:commandButton action="#{gmsTestCaseControl.update}" value="update" />
+			<h:commandButton action="#{gmsTestCaseSetupControl.update}"
+				value="update" />
 			<br />
-			<h:commandLink action="managerTestCase" value="Back" />
+			<h:commandLink action="managerTestCaseSetup" value="Back" />
 		</h:form>
 	</p:panel>
 	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
 		<p class="copyright">
-			© 2012 <a href="http://www.cts.com.br">CTS TEAM</a>
+			© 2012 <a href="http://www.cts.com.tr">CTS TEAM</a>
 		</p>
 		<p style="float: right">Running PrimeFaces-3.2 on Mojarra-2.1.4</p>
 	</div>

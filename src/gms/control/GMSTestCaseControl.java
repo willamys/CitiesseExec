@@ -2,6 +2,7 @@ package gms.control;
 
 import gms.GMSTestCase;
 import gms.data.GMSTestCaseDAOHibernate;
+import gms.data.GMSTestCaseSetupDAOHibernate;
 
 import java.util.List;
 
@@ -16,13 +17,8 @@ import util.ApplicationException;
 public class GMSTestCaseControl{
 	
 	private GMSTestCaseDAOHibernate dao;
-	private GMSTestCase testCase =  new GMSTestCase();
+	private GMSTestCase testCase = new GMSTestCase();
 	private DataModel<GMSTestCase> listTestCase;	
-	
-//	public GMSTestCaseControl(GMSTestCaseDAO dao) {
-//		this.dao = dao;
-//	}
-//	public GMSTestCaseControl(){}
 	
 	public DataModel<GMSTestCase> getListTestCase() throws ApplicationException{
 		dao = new GMSTestCaseDAOHibernate();
@@ -39,11 +35,6 @@ public class GMSTestCaseControl{
 		this.testCase = testCase;
 	}
 
-	public String prepareInsertTestCase(){
-		this.testCase = new GMSTestCase();
-		return "insertTestCase";
-	}
-
 	public String prepareUpdateTestCase(){
 		this.testCase = (GMSTestCase)(listTestCase.getRowData());
 		return "updateTestCase";
@@ -51,21 +42,28 @@ public class GMSTestCaseControl{
 	
 	public String insert() throws ApplicationException {
 		dao =  new GMSTestCaseDAOHibernate();
-		dao.insert(this.testCase);
-		return "index";
+		String result = "";
+		if(listById(this.testCase.getId()) == null){
+			System.out.println(this.testCase.getId());
+			dao.insert(this.testCase);
+			result = "managerTestCaseSetup";
+		}else{
+			result = "insertTestCase";
+		}
+		return result;
 	}
 
 	public String update() throws ApplicationException {
 		dao = new GMSTestCaseDAOHibernate();
 		dao.update(this.testCase);
-		return "index";
+		return "managerTestCase";
 	}
 
 	public String delete() throws ApplicationException {
 		GMSTestCase testCaseTemp = (GMSTestCase)(listTestCase.getRowData());
 		dao =  new  GMSTestCaseDAOHibernate();
 		dao.delete(testCaseTemp);
-		return "index";
+		return "managerTestCase";
 	}
 	
 	public GMSTestCase listById(int id) throws ApplicationException {

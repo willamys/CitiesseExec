@@ -7,54 +7,11 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>Test Case Manager</title>
+	<title>Main</title>
 	<link type="text/css" rel="stylesheet" href="/css/l.css" />
 </h:head>
 <h:body>
-	<ui:include src="/menu.xhtml" />
-	<p:panel header="Test Case Manager">
-		<p:dataTable var="testCase" value="#{gmsTestCaseControl.listTestCase}">
-			<p:column>
-				<f:facet name="header">Test Case ID</f:facet>
-				<h:outputText value="#{testCase.id}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">
-					Description
-				</f:facet>
-				<h:outputText value="#{testCase.descriptionSteps}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">Test Case Name
-				</f:facet>
-				<h:outputText value="#{testCase.testCaseName}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">
-					Update
-				</f:facet>
-				<h:form>
-					<h:commandButton
-						action="#{gmsTestCaseControl.prepareUpdateTestCase}"
-						value="Update" />
-				</h:form>
-			</p:column>
-			<p:column>
-				<f:facet name="header">
-					Delete
-				</f:facet>
-				<h:form>
-					<h:commandButton action="#{gmsTestCaseControl.delete}"
-						value="Delete" />
-				</h:form>
-			</p:column>
-		</p:dataTable>
-		<br />
-		<h:form>
-			<h:commandButton value="Insert Test Case"
-				action="#{gmsTestCaseControl.prepareInsertTestCase}" />
-		</h:form>
-	</p:panel>
+	<ui:include src="/menu.xhtml"/>
 	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
 		<p class="copyright">
 			© 2012 <a href="http://www.cts.com.tr">CTS TEAM</a>

@@ -12,17 +12,12 @@
 	<h:form>
 		<p:growl id="messages" />
 		<p:menubar>
-			<p:submenu label="File" icon="ui-icon-document">
-				<p:submenu label="New" icon="ui-icon-contact">
-					<p:menuitem value="Test Case" url="insertTestCase.xhtml"
-						action="#{gmsTestCaseControl.prepareInsertTestCase}" />
-					<p:menuitem value="Test Case Setup" url="#" />
-				</p:submenu>
-				<p:menuitem value="Open" url="#" />
-				<p:separator />
-				<p:menuitem value="Quit" url="#" />
+			<p:submenu label="Test Case" icon="ui-icon-document">
+				<p:menuitem value="Manager Test Case" url="managerTestCase.xhtml" />
 			</p:submenu>
-
+			<p:submenu label="Test Case Setup" icon="ui-icon-document">
+				<p:menuitem value="Manager Test Case Setup" url="managerTestCaseSetup.xhtml" />
+			</p:submenu>
 			<p:submenu label="Edit" icon="ui-icon-pencil">
 				<p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />

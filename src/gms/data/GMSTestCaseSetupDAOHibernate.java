@@ -66,12 +66,13 @@ public class GMSTestCaseSetupDAOHibernate implements GMSDAO{
 			try {
 				session = HibernateConnection.getSession();
 				transaction = session.beginTransaction();
-				List<GMSTestCaseSetup> result = session.createQuery("from GMSTestCase").list();
+				List<GMSTestCaseSetup> result = session.createQuery("from GMSTestCaseSetup").list();
 				transaction.commit();
 				return result;
 			} catch (HibernateException e) {
 				throw new GMSDataAccessException(ApplicationStrings.GMSTESTCASE_ERROR_MESSAGE_LIST_ALL_TESTCASE);
 			} finally {
+				session.close();
 			}
 		}
 
@@ -79,7 +80,7 @@ public class GMSTestCaseSetupDAOHibernate implements GMSDAO{
 			Session session = null;
 			try {
 				session = HibernateConnection.getSession();
-				Query q = session.createQuery("from testcase where id = :id");
+				Query q = session.createQuery("from GMSTestCaseSetup where id = :id");
 				q.setParameter("id", id);
 				GMSTestCaseSetup result = (GMSTestCaseSetup) q.uniqueResult();
 				session.close();
