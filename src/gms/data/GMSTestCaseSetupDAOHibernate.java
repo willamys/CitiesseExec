@@ -23,9 +23,10 @@ public class GMSTestCaseSetupDAOHibernate implements GMSDAO{
 				session.save(t);
 				transaction.commit();
 			} catch (HibernateException e) {
+				System.out.println(e.getMessage());
 				throw new GMSDataAccessException(ApplicationStrings.GMSTESTCASE_ERROR_MESSAGE_INSERT_TESTCASE);
 			} finally {
-				session.close();
+				//session.close();
 			}
 		}
 

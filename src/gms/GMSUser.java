@@ -20,6 +20,13 @@ public class GMSUser {
 	@Column
 	private String type;
 	
+	public GMSUser(int id, String login, String password, String type){
+		this.id = id;
+		this.login = login;
+		this.password = password;
+		this.type = type;
+	}
+	
 	public int getId() {
 		return id;
 	}

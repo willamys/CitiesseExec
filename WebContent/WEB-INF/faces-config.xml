@@ -15,5 +15,10 @@
 		<managed-bean-class>gms.control.GMSTestCaseSetupControl</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>gmsExecutionTestControl</managed-bean-name>
+		<managed-bean-class>gms.control.GMSExecutionTestControl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>

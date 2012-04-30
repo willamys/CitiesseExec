@@ -13,7 +13,7 @@ public class GMSExecutionTest {
 	@Id
 	private int id;
 	@Column
-	private GMSUser user;
+	private String user;
 	@Column
 	private Timestamp startDate;
 	@Column
@@ -25,10 +25,10 @@ public class GMSExecutionTest {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public GMSUser getUser() {
+	public String getUser() {
 		return user;
 	}
-	public void setUser(GMSUser user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 	public Timestamp getStartDate() {

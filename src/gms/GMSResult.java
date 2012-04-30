@@ -12,7 +12,7 @@ public class GMSResult {
 	@Id
 	private int id;
 	@Column
-	private GMSTestCase testCase;
+	private int idTestCase;
 	@Column
 	private String result;
 	@Column
@@ -24,11 +24,11 @@ public class GMSResult {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public GMSTestCase getTestCase() {
-		return testCase;
+	public int getTestCase() {
+		return idTestCase;
 	}
-	public void setTestCase(GMSTestCase testCase) {
-		this.testCase = testCase;
+	public void setTestCase(int idTestCase) {
+		this.idTestCase = idTestCase;
 	}
 	public String getResult() {
 		return result;
@@ -42,6 +42,5 @@ public class GMSResult {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
-	
+		
 }

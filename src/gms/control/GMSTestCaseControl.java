@@ -2,7 +2,6 @@ package gms.control;
 
 import gms.GMSTestCase;
 import gms.data.GMSTestCaseDAOHibernate;
-import gms.data.GMSTestCaseSetupDAOHibernate;
 
 import java.util.List;
 
