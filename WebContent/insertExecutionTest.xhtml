@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Insert Execution Test</title>
+	<link type="text/css" rel="stylesheet" href="/css/l.css" />
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<p:panel header="Insert Execution Test" >
+	<h:form id="Form" >
+            Execution Test Id: 
+            <h:inputText id="Execution_Test_Id" required="true"
+			value="#{gmsExecutionTestControl.executionTest.id}" />
+		<h:message for="Execution_Test_Id" />
+		<br />
+            Execution Test User: <h:inputText
+			value="#{gmsExecutionTestControl.executionTest.user}" />
+		<br />
+            Start Date Execution Test:<br/> <h:inputText
+			value="#{gmsExecutionTestControl.executionTest.startDate}" />
+		<br />
+			Finish Date Execution Test:<br/> <h:inputText
+			value="#{gmsExecutionTestControl.executionTest.finishDate}" />
+		<br />
+		
+		<h:commandButton action="#{gmsExecutionTestControl.insert}" value="Save"  />
+		<br />
+		<h:commandLink action="managerExecutionTest" value="Back" />
+	</h:form>
+	</p:panel>
+	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
+			<p class="copyright">©  2012 <a href="http://www.cts.com.tr">CTS TEAM</a></p>
+			<p style="float:right">Running PrimeFaces-3.2 on Mojarra-2.1.4</p>
+	</div>
+</h:body>
+</h:html>

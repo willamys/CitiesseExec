@@ -20,5 +20,14 @@
 		<managed-bean-class>gms.control.GMSExecutionTestControl</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
-
+	<managed-bean>
+		<managed-bean-name>gmsResultControl</managed-bean-name>
+		<managed-bean-class>gms.control.GMSResultControl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>testeMain</managed-bean-name>
+		<managed-bean-class>teste.Main</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 </faces-config>

@@ -1,5 +1,7 @@
 package gms.control;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 
 import gms.GMSExecutionTest;
@@ -21,6 +23,7 @@ public class GMSExecutionTestControl {
 	private DataModel<GMSExecutionTest> listExecutionTest;
 	
 	public DataModel<GMSExecutionTest> getListExecutionTest() throws ApplicationException{
+		System.out.println("List"+Calendar.getInstance().getTimeInMillis());
 		dao = new GMSExecutionTestDAOHibernate();
 		List<GMSExecutionTest> list = dao.listAll();
 		listExecutionTest = new ListDataModel<GMSExecutionTest>(list);
@@ -33,6 +36,7 @@ public class GMSExecutionTestControl {
 	}
 	
 	public String insert() throws ApplicationException {
+		System.out.println("Insert"+Calendar.getInstance().getTimeInMillis());
 		dao =  new GMSExecutionTestDAOHibernate();
 		String result = "";
 		if(listById(this.executionTest.getId()) == null){

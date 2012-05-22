@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Update Result</title>
+	<link type="text/css" rel="stylesheet" href="/css/l.css" />
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<p:panel header="Update Result">
+		<h:form>
+            Result Id:
+			<h:outputLabel value="#{gmsResultControl.result.id}" />
+			<br />
+			<h:inputHidden value="#{gmsResultControl.result.id}" />
+            Test Case Id: <h:inputText
+				value="#{gmsResultControl.result.idTestCase}" />
+			<br />
+            Result: <h:inputText
+				value="#{gmsResultControl.result.result}" />
+			<br />
+			Comment: <h:inputText
+				value="#{gmsResultControl.result.comment}" />
+			<br />
+			<h:commandButton action="#{gmsResultControl.update}" value="update" />
+			<br />
+			<h:commandLink action="managerResult" value="Back" />
+		</h:form>
+	</p:panel>
+	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
+		<p class="copyright">
+			© 2012 <a href="http://www.cts.com.br">CTS TEAM</a>
+		</p>
+		<p style="float: right">Running PrimeFaces-3.2 on Mojarra-2.1.4</p>
+	</div>
+</h:body>
+</h:html>

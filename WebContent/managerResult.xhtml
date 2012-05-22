@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Result Manager</title>
+	<link type="text/css" rel="stylesheet" href="/css/l.css" />
+</h:head>
+<h:body>
+	<ui:include src="/menu.xhtml" />
+	<p:panel header="Result Manager">
+		<p:dataTable var="result" value="#{gmsResultControl.listResult}">
+			<p:column>
+				<f:facet name="header">Result ID</f:facet>
+				<h:outputText value="#{result.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Test Case ID
+				</f:facet>
+				<h:outputText value="#{result.idTestCase}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header"> Result
+				</f:facet>
+				<h:outputText value="#{result.result}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header"> Comment
+				</f:facet>
+				<h:outputText value="#{result.comment}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">
+					Update
+				</f:facet>
+				<h:form>
+					<h:commandButton
+						action="#{gmsResultControl.prepareUpdateResult}"
+						value="Update" />
+				</h:form>
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					Delete
+				</f:facet>
+				<h:form>
+					<h:commandButton action="#{gmsResultControl.delete}"
+						value="Delete" />
+				</h:form>
+			</p:column>
+		</p:dataTable>
+		<br />
+		
+		<h:form>
+			<h:commandButton value="New Test Case" action="insertResult.xhtml" />
+		</h:form>
+		
+		<h:form>
+			<h:commandButton value="Gerar Planilha" action="#{testeMain.vai}" complete="insertResult.xhtml" />
+		</h:form>		
+	</p:panel>
+	<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
+		<p class="copyright">
+			© 2012 <a href="http://www.cts.com.tr">CTS TEAM</a>
+		</p>
+		<p style="float: right">Running PrimeFaces-3.2 on Mojarra-2.1.4</p>
+	</div>
+</h:body>
+</h:html>

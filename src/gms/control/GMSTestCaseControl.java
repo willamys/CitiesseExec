@@ -3,6 +3,7 @@ package gms.control;
 import gms.GMSTestCase;
 import gms.data.GMSTestCaseDAOHibernate;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -20,6 +21,7 @@ public class GMSTestCaseControl{
 	private DataModel<GMSTestCase> listTestCase;	
 	
 	public DataModel<GMSTestCase> getListTestCase() throws ApplicationException{
+		System.out.println("List: "+Calendar.getInstance().getTimeInMillis());
 		dao = new GMSTestCaseDAOHibernate();
 		List<GMSTestCase> list = dao.listAll();
 		listTestCase = new ListDataModel<GMSTestCase>(list);
@@ -40,6 +42,7 @@ public class GMSTestCaseControl{
 	}
 	
 	public String insert() throws ApplicationException {
+		System.out.println("Insert: "+Calendar.getInstance().getTimeInMillis());
 		dao =  new GMSTestCaseDAOHibernate();
 		String result = "";
 		if(listById(this.testCase.getId()) == null){

@@ -1,0 +1,14 @@
+1 - Faça a classes do pacote gms
+2 - Faça o controlador da respectiva classe no pacote gms.control
+3 - Faça a classe de conexão com o BD no pacote gms.data.
+4 - Faça uma classe teste no pacote test para testar a linha de execução das classes feitas.
+5 - Mapei as propriedades necessárias nos arquivos do pacote propeties:
+	5.1 - Properties US e BR - ApplicationStrings - GMSEXECUTIONTEST_ERROR_MESSAGE_INSERT_EXECUTIONTEST.
+	5.2 - Mepeamento da classe - <mapping class="gms.GMSResult" />
+6 - Crie as respectivas paginas .xhtml
+7 - Mapei o faces-config.xml na pasta WEB-INF:
+	7.1 - <managed-bean>
+				<managed-bean-name>gmsResultControl</managed-bean-name>
+				<managed-bean-class>gms.control.GMSResultControl</managed-bean-class>
+				<managed-bean-scope>request</managed-bean-scope>
+		  </managed-bean>

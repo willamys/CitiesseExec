@@ -24,10 +24,10 @@ public class GMSResult {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getTestCase() {
+	public int getIdTestCase() {
 		return idTestCase;
 	}
-	public void setTestCase(int idTestCase) {
+	public void setIdTestCase(int idTestCase) {
 		this.idTestCase = idTestCase;
 	}
 	public String getResult() {

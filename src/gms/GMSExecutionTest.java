@@ -1,7 +1,5 @@
 package gms;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,9 +13,9 @@ public class GMSExecutionTest {
 	@Column
 	private String user;
 	@Column
-	private Timestamp startDate;
+	private String startDate;
 	@Column
-	private Timestamp finishDate;
+	private String finishDate;
 	
 	public int getId() {
 		return id;
@@ -31,16 +29,16 @@ public class GMSExecutionTest {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	public Timestamp getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(Timestamp startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
-	public Timestamp getFinishDate() {
+	public String getFinishDate() {
 		return finishDate;
 	}
-	public void setFinishDate(Timestamp finishDate) {
+	public void setFinishDate(String finishDate) {
 		this.finishDate = finishDate;
 	}
 

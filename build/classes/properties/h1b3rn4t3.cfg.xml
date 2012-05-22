@@ -26,5 +26,6 @@
 		<mapping class="gms.GMSTestCaseSetup" />
 		<mapping class="gms.GMSWorkFlow" />
 		<mapping class="gms.GMSExecutionTest" />
+		<mapping class="gms.GMSResult" />
 	</session-factory>
 </hibernate-configuration>
